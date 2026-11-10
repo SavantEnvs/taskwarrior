@@ -1,0 +1,10 @@
+project: savantenvs/taskwarrior
+target: fuzz_lexer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_lexer/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_lexer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_lexer/fuzz_lexer.dict
+    timeout: 60

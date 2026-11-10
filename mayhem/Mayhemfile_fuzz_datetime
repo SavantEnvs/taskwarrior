@@ -1,0 +1,10 @@
+project: savantenvs/taskwarrior
+target: fuzz_datetime
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_datetime/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_datetime
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_datetime/fuzz_datetime.dict
+    timeout: 60
